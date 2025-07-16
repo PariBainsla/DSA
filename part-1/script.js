@@ -1,23 +1,54 @@
-let arr1 = [2,5,6]
-let arr2 = [1,3,4,8]
-let temp = new Array(arr1.length + arr2.length)
-let i=j=k=0;
+//Toggle each character
+let s = "MaDam";
+let toggle="";
 
-while(i<arr1.length && j<arr2.length){
-    if(arr1[i]<arr2[j]){
-        temp[k] = arr1[i]
-        k++;
-        i++;
+for (let i=0; i<=s.length; i++){
+    let ch = s.charCodeAt(i);
+    if(ch>=65 && ch<=90){
+toggle = toggle + String.fromCharCode(ch+32);
     }
-    else{
-        temp[k++] = arr2[j++]
+    else if(ch>=97 && ch<=122){
+        toggle = toggle + String.fromCharCode(ch - 32);
     }
 }
-while(i<arr1.length){
-    temp[k++]= arr1[i++]
+console.log(toggle);
+
+//String - Pallindrome or not
+let st = "madam";
+let i = 0;
+let j = st.length-1;
+let isPalindrome = true;
+
+while(i<j){
+    if(st.charAt(i) !== st.charAt(j)){
+        isPalindrome = false;
+        break;
+    }
+    i++;
+    j--;
 }
-while(j<arr2.length){
-    temp[k++] = arr2[j++]
+if(isPalindrome){
+    console.log("Palindrome")
+}
+else{
+    console.log("not a palindrome")
 }
 
-console.log(temp);
+// Print in reverse order
+let str = "pari";
+let rev = "";
+for(let k=str.length-1; k>=0; k--){
+    rev = rev + str.charAt(k)
+}
+console.log(rev)
+
+//Frequency of each character
+let stri = "hAppy";
+stri = stri.toLowerCase();
+let freq = {}
+
+for(let k=0; k<stri.length; k++){
+    let char = stri[i];
+    freq[char] = (freq[char] || 0) + 1;
+}
+console.log(freq);
