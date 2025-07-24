@@ -103,18 +103,45 @@
 // console.log(arr);
 
 //---------Maximum Erasure value-------
-let nums = [4,2,4,5,6];
-let seen = new Set();
-let left = 0, sum = 0; maxSum = 0;
+// let nums = [4,2,4,5,6];
+// let seen = new Set();
+// let left = 0, sum = 0; maxSum = 0;
 
-for(let right=0; right<nums.length; right++){
-    while (seen.has(nums[right])) {
-            seen.delete(nums[left]);
-            sum -= nums[left];
-            left++;
-}
-seen.add(nums[right]);
-        sum += nums[right];
-        maxSum = Math.max(maxSum, sum);
-    }
-    console.log(maxSum);
+// for(let right=0; right<nums.length; right++){
+//     while (seen.has(nums[right])) {
+//             seen.delete(nums[left]);                                
+//             sum -= nums[left];
+//             left++;
+// }
+// seen.add(nums[right]);
+//         sum += nums[right];
+//         maxSum = Math.max(maxSum, sum);
+//     }
+//     console.log(maxSum);
+
+
+//-----Recursion--------
+
+//---n to 1
+// function temp(n){
+//     if (n==0) return;
+//     console.log(n);
+//     temp(n-1);
+// }
+// temp(10);
+
+//------1 t0 n  [Backtracking]
+// function temp(n){
+//     if(n==0) return;
+//     temp(n-1);
+//     console.log(n)
+// }
+// temp(10);
+
+//---------print hello 10 times
+// function temp(n){
+//     if(n==0) return;
+//     console.log("hello");
+//     temp(n-1);
+// }
+// temp(10);
