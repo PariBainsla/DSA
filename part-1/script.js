@@ -147,7 +147,7 @@
 // temp(10);
 
 
-// Two sum explanation
+// Two sum explanation  DevX-1
 // let nums = [2,7,8,9];
 // let target = 15;
 // function sum(nums, target){
@@ -164,24 +164,48 @@
 
 
 // unplaced fruits problem - 3479
-let fruits = [4,2,5];
-let baskets = [3,5,4];
-let n = fruits.length;
-let used = new Array(n).fill(false);
+// let fruits = [4,2,5];
+// let baskets = [3,5,4];
+// let n = fruits.length;
+// let used = new Array(n).fill(false);
 
-let unplaced =0;
+// let unplaced =0;
 
-for (let i = 0; i<n; i++){
-    let placed = false;
-    for(let j=0; j<n; j++){
-        if(!used[j] && baskets[j] >= fruits[i]){
-            used[j] = true;
-            placed = true;
-            break;
+// for (let i = 0; i<n; i++){
+//     let placed = false;
+//     for(let j=0; j<n; j++){
+//         if(!used[j] && baskets[j] >= fruits[i]){
+//             used[j] = true;
+//             placed = true;
+//             break;
+//         }
+//     }
+//     if(!placed){
+//         unplaced++;
+//     }
+// }
+// console.log(unplaced);
+
+// Valid Palindrome - DevX-2
+let s = "{[()]}"
+function isValid(s){
+    let stack = [];
+    let map = {
+        '}' : '{',
+        ')' : '(',
+        ']' : '['
+    }
+
+    for (let char of s){
+       if( char === '(' || char === '{' || char === '['){
+        stack.push(char);
+       }
+       else{
+        if(stack.length === 0 || stack.pop() !== map[char]){
+            return false;
         }
+       }
     }
-    if(!placed){
-        unplaced++;
-    }
+    return stack.length === 0;
 }
-console.log(unplaced);
+console.log(isValid(s));
