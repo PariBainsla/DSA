@@ -148,16 +148,40 @@
 
 
 // Two sum explanation
-let nums = [2,7,8,9];
-let target = 15;
-function sum(nums, target){
-    for(let i=0; i<nums.length; i++){
-        for(let j=i+1; j<nums.length; j++){
-            if(nums[i] + nums[j] === target){
-                return [i,j]
-            }
+// let nums = [2,7,8,9];
+// let target = 15;
+// function sum(nums, target){
+//     for(let i=0; i<nums.length; i++){
+//         for(let j=i+1; j<nums.length; j++){
+//             if(nums[i] + nums[j] === target){
+//                 return [i,j]
+//             }
+//         }
+//     }
+//     // return [];
+// }
+// console.log(sum(nums, target));
+
+
+// unplaced fruits problem - 3479
+let fruits = [4,2,5];
+let baskets = [3,5,4];
+let n = fruits.length;
+let used = new Array(n).fill(false);
+
+let unplaced =0;
+
+for (let i = 0; i<n; i++){
+    let placed = false;
+    for(let j=0; j<n; j++){
+        if(!used[j] && baskets[j] >= fruits[i]){
+            used[j] = true;
+            placed = true;
+            break;
         }
     }
-    // return [];
+    if(!placed){
+        unplaced++;
+    }
 }
-console.log(sum(nums, target));
+console.log(unplaced);
