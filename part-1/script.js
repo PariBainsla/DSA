@@ -187,25 +187,36 @@
 // console.log(unplaced);
 
 // Valid Palindrome - DevX-2
-let s = "{[()]}"
-function isValid(s){
-    let stack = [];
-    let map = {
-        '}' : '{',
-        ')' : '(',
-        ']' : '['
-    }
+// let s = "{[()]}"
+// function isValid(s){
+//     let stack = [];
+//     let map = {
+//         '}' : '{',
+//         ')' : '(',
+//         ']' : '['
+//     }
 
-    for (let char of s){
-       if( char === '(' || char === '{' || char === '['){
-        stack.push(char);
-       }
-       else{
-        if(stack.length === 0 || stack.pop() !== map[char]){
-            return false;
-        }
-       }
-    }
-    return stack.length === 0;
+//     for (let char of s){
+//        if( char === '(' || char === '{' || char === '['){
+//         stack.push(char);
+//        }
+//        else{
+//         if(stack.length === 0 || stack.pop() !== map[char]){
+//             return false;
+//         }
+//        }
+//     }
+//     return stack.length === 0;
+// }
+// console.log(isValid(s));
+
+
+// Maximum Subarray
+let nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+let currentSum = nums[0];
+let maxSum = nums[0];
+for(let i=0; i<nums.length; i++){
+    currentSum =  Math.max(nums[i] , nums[i] + currentSum);
+    maxSum = Math.max(currentSum, maxSum)
 }
-console.log(isValid(s));
+console.log(maxSum)
