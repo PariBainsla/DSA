@@ -48,27 +48,47 @@
 // }
 
 // QUESTION
+// #include <iostream>
+// using namespace std;
+// int main()
+// {
+//     int n;
+//     cin >> n;
+//     if (n % 2 != 0)
+//     {
+//         cout << "Weird";
+//     }
+//     else if (n >= 2 && n < 5)
+//     {
+//         cout << "not weird";
+//     }
+//     else if (n >= 6 && n <= 20)
+//     {
+//         cout << "weird";
+//     }
+//     else if (n > 20)
+//     {
+//         cout << "not weird";
+//     }
+//     return 0;
+// }
+
+
+//QUESTION
 #include <iostream>
 using namespace std;
-int main()
-{
-    int n;
-    cin >> n;
-    if (n % 2 != 0)
-    {
-        cout << "Weird";
+int main(){
+    int initialAge;
+    cout<<"Enter here : ";
+    cin>>initialAge;
+    if(initialAge<0){
+        cout<<"Age is not valid, setting age to 0.";
     }
-    else if (n >= 2 && n < 5)
-    {
-        cout << "not weird";
+    else if(initialAge<13){
+        cout<<"You are young.";
     }
-    else if (n >= 6 && n <= 20)
-    {
-        cout << "weird";
+    else if(initialAge>=13 && initialAge<=18){
+        cout<<"You are a teenager.";
     }
-    else if (n > 20)
-    {
-        cout << "not weird";
-    }
-    return 0;
+    else cout<<"Yo are old";
 }
