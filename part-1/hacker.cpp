@@ -90,13 +90,28 @@
 // else cout<<"Yo are old";
 
 //loop
+// int n;
+// cout<<"enter n";
+// cin>>n;
+// for(int i=1; i<11; i++){
+//     cout<<n << "*" << i << "=" << n*i<<endl;
+// }
+
+
 #include <iostream>
 using namespace std;
 int main(){
-    int n;
-    cout<<"enter n";
-    cin>>n;
-    for(int i=1; i<11; i++){
-        cout<<n << "*" << i << "=" << n*i<<endl;
+    string str;
+    cin>>str;
+
+    string even = "";
+    string odd = "";
+
+    for(int i=0; i<str.length(); i++){
+if(i%2==0){
+    even += str[i];
+}
+else odd += str[i];
     }
+    cout<<even  << " " << odd ;
 }
