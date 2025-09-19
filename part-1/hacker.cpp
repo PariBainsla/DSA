@@ -75,20 +75,28 @@
 
 
 //QUESTION
+// int initialAge;
+// cout<<"Enter here : ";
+// cin>>initialAge;
+// if(initialAge<0){
+//     cout<<"Age is not valid, setting age to 0.";
+// }
+// else if(initialAge<13){
+//     cout<<"You are young.";
+// }
+// else if(initialAge>=13 && initialAge<=18){
+//     cout<<"You are a teenager.";
+// }
+// else cout<<"Yo are old";
+
+//loop
 #include <iostream>
 using namespace std;
 int main(){
-    int initialAge;
-    cout<<"Enter here : ";
-    cin>>initialAge;
-    if(initialAge<0){
-        cout<<"Age is not valid, setting age to 0.";
+    int n;
+    cout<<"enter n";
+    cin>>n;
+    for(int i=1; i<11; i++){
+        cout<<n << "*" << i << "=" << n*i<<endl;
     }
-    else if(initialAge<13){
-        cout<<"You are young.";
-    }
-    else if(initialAge>=13 && initialAge<=18){
-        cout<<"You are a teenager.";
-    }
-    else cout<<"Yo are old";
 }
