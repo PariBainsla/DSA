@@ -97,21 +97,31 @@
 //     cout<<n << "*" << i << "=" << n*i<<endl;
 // }
 
+// string str;
+// cin>>str;
+// string even = "";
+// string odd = "";
+// for(int i=0; i<str.length(); i++){
+// if(i%2==0){
+// even += str[i];
+// }
+// else odd += str[i];
+// }
+// cout<<even  << " " << odd ;
 
 #include <iostream>
+#include <vector>
 using namespace std;
 int main(){
-    string str;
-    cin>>str;
-
-    string even = "";
-    string odd = "";
-
-    for(int i=0; i<str.length(); i++){
-if(i%2==0){
-    even += str[i];
-}
-else odd += str[i];
+    int n;
+    cin>>n;
+    vector<int> arr(n);
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
     }
-    cout<<even  << " " << odd ;
+    for(int i=n-1; i>=0; i--){
+        cout<< arr[i];
+        if(i!=0) cout<<" ";
+    }
+    return 0;
 }
